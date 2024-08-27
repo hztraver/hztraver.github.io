@@ -8,6 +8,8 @@ bibliography: references.bib
 
 A note: This document was created for GEOB503 at the University of British Columbia in May of 2021. A full document can be found at:
 
+{{< downloadthis randomForest_Muise-Evan.pdf >}}
+
 # Introduction
 
 Random Forest is a powerful algorithm developed by Breiman [-@breiman2001] for both classification and regression. It is an incredibly robust machine learning algorithm which is commonly used in many fields of study, including remote sensing [@belgiu2016; @chan2008; @pal2005; @rodriguez-galiano2012], ecological modelling [@death2007; @cutler2007], and economic geology [@rodriguez-galiano2015], amongst many other fields. Random Forest is a combination of classification and regression trees (CART), and bagging (bootstrap aggregation), and is considered an ensemble method [@breiman2001]. This paper will delve into the statistical background behind the components of the Random Forest algorithm, identify assumptions and diagnostic procedures, discuss examples of the algorithm's usage in peer-reviewed literature, identify available packages for implementing the algorithm.
