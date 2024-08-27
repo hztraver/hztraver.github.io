@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Evan Muise">
+<meta name="dcterms.date" content="2020-12-31">
+
+<title>Evan Muise - A non-statistician’s guide to random forests</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Evan Muise</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">A non-statistician’s guide to random forests</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Evan Muise </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 31, 2020</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  <div>
+    <div class="abstract">
+      <div class="block-title">Abstract</div>
+      Random Forest is a powerful ensemble machine learning algorithm suitable for both classification and regression problems. By combining bootstrap aggregation with decision trees and the random subspace method, Random Forest becomes a more accurate predictor than individual, or even bagged regression trees. In this blog, the major statistical concepts behind the algorithm are discussed, alongside assumptions and disgnostics associated with the technique. A literature review is conducted concerning the use of the algorithm in various fields, including ecology, geography, and remote sensing. R packages and other software available to utilize the algorithm are presented.
+    </div>
+  </div>
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#statistical-concepts" id="toc-statistical-concepts" class="nav-link" data-scroll-target="#statistical-concepts">Statistical Concepts</a>
+  <ul class="collapse">
+  <li><a href="#classification-and-regression-trees" id="toc-classification-and-regression-trees" class="nav-link" data-scroll-target="#classification-and-regression-trees">Classification and Regression Trees</a></li>
+  <li><a href="#sec-bagging" id="toc-sec-bagging" class="nav-link" data-scroll-target="#sec-bagging">Bagging (Bootstrap Aggregation)</a></li>
+  <li><a href="#random-forest" id="toc-random-forest" class="nav-link" data-scroll-target="#random-forest">Random Forest</a></li>
+  </ul></li>
+  <li><a href="#assumptions-and-diagnostic-procedures" id="toc-assumptions-and-diagnostic-procedures" class="nav-link" data-scroll-target="#assumptions-and-diagnostic-procedures">Assumptions and Diagnostic Procedures</a>
+  <ul class="collapse">
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
+  <li><a href="#diagnostics" id="toc-diagnostics" class="nav-link" data-scroll-target="#diagnostics">Diagnostics</a>
+  <ul class="collapse">
+  <li><a href="#out-of-bag-error" id="toc-out-of-bag-error" class="nav-link" data-scroll-target="#out-of-bag-error">Out of Bag Error</a></li>
+  <li><a href="#variable-importance" id="toc-variable-importance" class="nav-link" data-scroll-target="#variable-importance">Variable Importance</a></li>
+  <li><a href="#cohens-kappa" id="toc-cohens-kappa" class="nav-link" data-scroll-target="#cohens-kappa">Cohen’s Kappa</a></li>
+  <li><a href="#receiver-operating-characteristic-area-under-the-curve" id="toc-receiver-operating-characteristic-area-under-the-curve" class="nav-link" data-scroll-target="#receiver-operating-characteristic-area-under-the-curve">Receiver Operating Characteristic Area Under the Curve</a></li>
+  <li><a href="#regression-diagnostics" id="toc-regression-diagnostics" class="nav-link" data-scroll-target="#regression-diagnostics">Regression Diagnostics</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Random Forest is a powerful algorithm developed by Breiman <span class="citation" data-cites="breiman2001">(<a href="#ref-breiman2001" role="doc-biblioref">2001</a>)</span> for both classification and regression. It is an incredibly robust machine learning algorithm which is commonly used in many fields of study, including remote sensing <span class="citation" data-cites="belgiu2016 chan2008 pal2005 rodriguez-galiano2012">(<a href="#ref-belgiu2016" role="doc-biblioref">Belgiu and Dragut 2016</a>; <a href="#ref-chan2008" role="doc-biblioref">Chan and Paelinckx 2008</a>; <a href="#ref-pal2005" role="doc-biblioref">Pal 2005</a>; <a href="#ref-rodriguez-galiano2012" role="doc-biblioref">V. F. Rodriguez-Galiano et al. 2012</a>)</span>, ecological modelling <span class="citation" data-cites="death2007 cutler2007">(<a href="#ref-death2007" role="doc-biblioref">De’ath 2007</a>; <a href="#ref-cutler2007" role="doc-biblioref">Cutler et al. 2007</a>)</span>, and economic geology <span class="citation" data-cites="rodriguez-galiano2015">(<a href="#ref-rodriguez-galiano2015" role="doc-biblioref">V. Rodriguez-Galiano et al. 2015</a>)</span>, amongst many other fields. Random Forest is a combination of classification and regression trees (CART), and bagging (bootstrap aggregation), and is considered an ensemble method <span class="citation" data-cites="breiman2001">(<a href="#ref-breiman2001" role="doc-biblioref">Breiman 2001</a>)</span>. This paper will delve into the statistical background behind the components of the Random Forest algorithm, identify assumptions and diagnostic procedures, discuss examples of the algorithm’s usage in peer-reviewed literature, identify available packages for implementing the algorithm.</p>
+</section>
+<section id="statistical-concepts" class="level1">
+<h1>Statistical Concepts</h1>
+<section id="classification-and-regression-trees" class="level2">
+<h2 class="anchored" data-anchor-id="classification-and-regression-trees">Classification and Regression Trees</h2>
+<p>Classification and regression trees (hereafter CART; also referred to as decision trees) are predictive models that predict output features by creating splits in various attributes in the dataset <span class="citation" data-cites="rokach2007">(<a href="#ref-rokach2007" role="doc-biblioref">Rokach and Maimon 2007</a>)</span>. These splits create nodes, labeled with input features. In the case of a continuous input variable, the node will be split based on being higher or lower than a value in the input variable (e.g.&nbsp;<span class="math inline">\(zmax &lt; 21.02\)</span> at the first node in Figure @ref(fig:classtree )) In the opposite case, where the input variable is a class (such as land cover), the node will be based on one value versus all others. CART models are scale invariant, can ignore irrelevant features, and are easily interpretable by the end user <span class="citation" data-cites="breiman2017">(<a href="#ref-breiman2017" role="doc-biblioref">Breiman 2017</a>)</span>. In addition, CART models can handle highly nonlinear and conditional relationships. However, not all is perfect with these classification trees. They often overfit the model, leading to low bias and high variance. Due to this tendency to overfit, methods such as bagging and boosting are frequently employed to aid with these problems <span class="citation" data-cites="sutton2005a">(<a href="#ref-sutton2005a" role="doc-biblioref">Sutton 2005</a>)</span>.</p>
+</section>
+<section id="sec-bagging" class="level2">
+<h2 class="anchored" data-anchor-id="sec-bagging">Bagging (Bootstrap Aggregation)</h2>
+<p>Bootstrapping is a resampling method for calculating statistics on a dataset. The specific methodology is to resample with replacement in order to mimic the sampling process. This involves taking a dataset, and selecting the same number of observations, but allowing for the same observation to be reobserved. This allows users to derive estimates of variance and confidence intervals for a single dataset <span class="citation" data-cites="breiman1996">(<a href="#ref-breiman1996" role="doc-biblioref">Breiman 1996</a>)</span>.</p>
+<p>Bagging, or bootstrap aggregation, occurs when a bootstrap resampled dataset is used to create a model multiple times. The results from this ensemble of models is aggregated to generate a predictor from the many models <span class="citation" data-cites="breiman1996">(<a href="#ref-breiman1996" role="doc-biblioref">Breiman 1996</a>)</span>. This has been done using all input features in the form of bagged regression trees <span class="citation" data-cites="sutton2005a">(<a href="#ref-sutton2005a" role="doc-biblioref">Sutton 2005</a>)</span>. Bagging does not reweight the input models to improve accuracy; a simple vote or average is used from all of the bagged models <span class="citation" data-cites="sutton2005a">(<a href="#ref-sutton2005a" role="doc-biblioref">Sutton 2005</a>)</span>. This ensemble method can have improved accuracy over a single CART model. While the bagged models may have higher accuracy, the same predictors can dominate the models, reducing the potential maximum accuracy <span class="citation" data-cites="ho2002">(<a href="#ref-ho2002" role="doc-biblioref">Ho 2002</a>)</span>.</p>
+</section>
+<section id="random-forest" class="level2">
+<h2 class="anchored" data-anchor-id="random-forest">Random Forest</h2>
+<p>While bagged CART models can be a powerful method for classification and regression, with marked improvements over non-ensemble CART models, there is still room for improvement. When strong predictor features are present in the data, it is entirely possible for these few strong predictors to dominate the ensemble <span class="citation" data-cites="ho2002">(<a href="#ref-ho2002" role="doc-biblioref">Ho 2002</a>)</span>. Where Random Forest differs from bagged regression trees is in the use of the Random Subspace method, which uses a subset of all potential input features to train each tree. The Random Subspace method prevents these strong predicting features from dominating the resultant model <span class="citation" data-cites="tinkamho1998">(<a href="#ref-tinkamho1998" role="doc-biblioref">Tin Kam Ho 1998</a>)</span>.</p>
+<p>In summary, the Random Forest algorithm creates many classification and regression tree models based off a bootstrap of the dataset and features <span class="citation" data-cites="breiman2001">(<a href="#ref-breiman2001" role="doc-biblioref">Breiman 2001</a>)</span>. These models are then aggregated into an ensemble model by averaging the model outputs (regression), or via votes (classification). This is a powerful advancement from simple CART models, which frequently overfit, and on bagged CART models, which may become dominated by strong predicting features <span class="citation" data-cites="breiman2001 tinkamho1998">(<a href="#ref-breiman2001" role="doc-biblioref">Breiman 2001</a>; <a href="#ref-tinkamho1998" role="doc-biblioref">Tin Kam Ho 1998</a>)</span>.</p>
+</section>
+</section>
+<section id="assumptions-and-diagnostic-procedures" class="level1">
+<h1>Assumptions and Diagnostic Procedures</h1>
+<section id="assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions">Assumptions</h2>
+<p>One of the strengths of Random Forest is the algorithm’s robustness. No formal distributions need to be followed, and the algorithm can handle both categorical and numerical data, which can be skewed or multi-modal. The algorithm’s robustness leads to the Random Forest being incredibly powerful, and useful in many circumstances for both classification and regression.</p>
+</section>
+<section id="diagnostics" class="level2">
+<h2 class="anchored" data-anchor-id="diagnostics">Diagnostics</h2>
+<section id="out-of-bag-error" class="level3">
+<h3 class="anchored" data-anchor-id="out-of-bag-error">Out of Bag Error</h3>
+<p>The out of bag error is a validation method specifically applied to algorithms making using of the bagging approach outlined in <a href="#sec-bagging" class="quarto-xref">Section&nbsp;2.2</a>. For each tree, the model is trained on those samples that are within the bootstrap, and then tested on those that were not included on the bootstrap for each tree. Those that are not included in the bootstrap are termed the “Out of Bag sample”, and the error is calculated for each tree as the number of correctly predicted rows from the out of bag sample. It is recorded as each new tree is generated and the ensemble predictions change.</p>
+</section>
+<section id="variable-importance" class="level3">
+<h3 class="anchored" data-anchor-id="variable-importance">Variable Importance</h3>
+<p>Due to the high volume of variables potentially included in a Random Forest model, it can be relevant to the researcher to examine which variables contribute most to the model. This can be accomplished due to the recording of the Out of Bag error after each tree is generated. Each instantaneous (after each tree) error, can be compared to those found after the final trees are produced. This generates a score which can be used to rank the variables. Those with larger scores are considered more important than those with smaller scores <span class="citation" data-cites="zhu2015">(<a href="#ref-zhu2015" role="doc-biblioref">Zhu, Zeng, and Kosorok 2015</a>)</span>. It should be noted that there is a bias in Random Forest to favour categorical variables with high numbers of levels, however this can be overcome using other variants on the Random Forest algorithm <span class="citation" data-cites="toloi2011 altmann2010">(<a href="#ref-toloi2011" role="doc-biblioref">Toloşi and Lengauer 2011</a>; <a href="#ref-altmann2010" role="doc-biblioref">Altmann et al. 2010</a>)</span>.</p>
+</section>
+<section id="cohens-kappa" class="level3">
+<h3 class="anchored" data-anchor-id="cohens-kappa">Cohen’s Kappa</h3>
+<p>Cohen’s kappa (<span class="math inline">\(k\)</span>) is a measurement of categorical accuracy. It can be used with the Random Forest algorithm when used a classifier, but not as a regressor. <span class="math inline">\(k\)</span> includes the possibility of chance agreement, rendering it a more robust measurement than percent agreement. It is calculated using the confusion matrix of a classification algorithm.</p>
+<span class="math display">\[\begin{equation}
+  k = \frac{p_o - p_e}{1 - p_e} = 1 - \frac{1 - p_o}{1 - p_e}
+  (\#eq:kappa-eq)
+\end{equation}\]</span>
+<p>The calculation for Cohen’s Kappa is shown in Equation @ref(eq:kappa-eq), where <span class="math inline">\(p_o\)</span> is the observed agreement, and <span class="math inline">\(p_e\)</span> is the hypothetical probability of chance agreement <span class="citation" data-cites="cohen1960">(<a href="#ref-cohen1960" role="doc-biblioref">Cohen 1960</a>)</span>. More detailed equations and calculations used in Cohen’s kappa for nominal data of many classes can be found in Cohen <span class="citation" data-cites="cohen1960">(<a href="#ref-cohen1960" role="doc-biblioref">1960</a>)</span>.</p>
+</section>
+<section id="receiver-operating-characteristic-area-under-the-curve" class="level3">
+<h3 class="anchored" data-anchor-id="receiver-operating-characteristic-area-under-the-curve">Receiver Operating Characteristic Area Under the Curve</h3>
+<p>The Receiver Operating Characteristic (ROC) is a diagnostic plot that is used to examine binary classifiers, such as the one used in Section @ref(technique-application) in Figure @ref(fig:roc-auc). The ROC plots the false positive rate against the true positive rate for a binary classifier. This shows the performance of the model at all classification thresholds.</p>
+<p>The Area Under the Curve (AUC) for the ROC is another diagnostic included in this plot. Higher AUC values are desirable, with a perfect model having an AUC of 1.0. The AUC is scale-invariant, and measures prediction quality regardless of the classification threshold <span class="citation" data-cites="fawcett2006">(<a href="#ref-fawcett2006" role="doc-biblioref">Fawcett 2006</a>)</span>.</p>
+</section>
+<section id="regression-diagnostics" class="level3">
+<h3 class="anchored" data-anchor-id="regression-diagnostics">Regression Diagnostics</h3>
+<p>Diagnostic procedures for operating Random Forest as a regression algorithm are similar to other regression diagnostics. The <span class="math inline">\(R^2\)</span> is commonly used alongside various error statistics such as Root Mean Square Error, Mean Absolute Error, among others. These can be compared between model parameters or other types of regression.</p>
+
+
+
+</section>
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-altmann2010" class="csl-entry" role="listitem">
+Altmann, André, Laura Toloşi, Oliver Sander, and Thomas Lengauer. 2010. <span>“Permutation Importance: A Corrected Feature Importance Measure.”</span> <em>Bioinformatics</em> 26 (10): 1340–47. <a href="https://doi.org/10.1093/bioinformatics/btq134">https://doi.org/10.1093/bioinformatics/btq134</a>.
+</div>
+<div id="ref-belgiu2016" class="csl-entry" role="listitem">
+Belgiu, Mariana, and Lucian Dragut. 2016. <span>“Random Forest in Remote Sensing: A Review of Applications and Future Directions.”</span> <em>Isprs Journal of Photogrammetry and Remote Sensing</em> 114 (April): 24–31. <a href="https://doi.org/10.1016/j.isprsjprs.2016.01.011">https://doi.org/10.1016/j.isprsjprs.2016.01.011</a>.
+</div>
+<div id="ref-breiman1996" class="csl-entry" role="listitem">
+Breiman, Leo. 1996. <span>“Bagging Predictors.”</span> <em>Machine Learning</em> 24 (2): 123–40. <a href="https://doi.org/10.1007/BF00058655">https://doi.org/10.1007/BF00058655</a>.
+</div>
+<div id="ref-breiman2001" class="csl-entry" role="listitem">
+———. 2001. <span>“Random Forests.”</span> <em>Machine Learning</em> 45 (1): 5–32. <a href="https://doi.org/10.1023/A:1010933404324">https://doi.org/10.1023/A:1010933404324</a>.
+</div>
+<div id="ref-breiman2017" class="csl-entry" role="listitem">
+———. 2017. <em>Classification and Regression Trees</em>. Routledge.
+</div>
+<div id="ref-chan2008" class="csl-entry" role="listitem">
+Chan, Jonathan Cheung-Wai, and Desiré Paelinckx. 2008. <span>“Evaluation of Random Forest and Adaboost Tree-Based Ensemble Classification and Spectral Band Selection for Ecotope Mapping Using Airborne Hyperspectral Imagery.”</span> <em>Remote Sensing of Environment</em> 112 (6): 2999–3011. <a href="https://doi.org/10.1016/j.rse.2008.02.011">https://doi.org/10.1016/j.rse.2008.02.011</a>.
+</div>
+<div id="ref-cohen1960" class="csl-entry" role="listitem">
+Cohen, Jacob. 1960. <span>“A Coefficient of Agreement for Nominal Scales.”</span> <em>Educational and Psychological Measurement</em> 20 (1): 37–46. <a href="https://doi.org/10.1177/001316446002000104">https://doi.org/10.1177/001316446002000104</a>.
+</div>
+<div id="ref-cutler2007" class="csl-entry" role="listitem">
+Cutler, D. Richard, Thomas C. Edwards, Karen H. Beard, Adele Cutler, Kyle T. Hess, Jacob Gibson, and Joshua J. Lawler. 2007. <span>“Random Forests for Classification in Ecology.”</span> <em>Ecology</em> 88 (11): 2783–92. https://doi.org/<a href="https://doi.org/10.1890/07-0539.1">https://doi.org/10.1890/07-0539.1</a>.
+</div>
+<div id="ref-death2007" class="csl-entry" role="listitem">
+De’ath, Glenn. 2007. <span>“Boosted Trees for Ecological Modeling and Prediction.”</span> <em>Ecology</em> 88 (1): 243–51. https://doi.org/<a href="https://doi.org/10.1890/0012-9658(2007)88[243:BTFEMA]2.0.CO;2">https://doi.org/10.1890/0012-9658(2007)88[243:BTFEMA]2.0.CO;2</a>.
+</div>
+<div id="ref-fawcett2006" class="csl-entry" role="listitem">
+Fawcett, Tom. 2006. <span>“An Introduction to ROC Analysis.”</span> <em>Pattern Recognition Letters</em> 27 (8): 861–74. <a href="https://doi.org/10.1016/j.patrec.2005.10.010">https://doi.org/10.1016/j.patrec.2005.10.010</a>.
+</div>
+<div id="ref-ho2002" class="csl-entry" role="listitem">
+Ho, Tin Kam. 2002. <span>“A Data Complexity Analysis of Comparative Advantages of Decision Forest Constructors.”</span> <em>Pattern Analysis &amp; Applications</em> 5 (2): 102–12. <a href="https://doi.org/10.1007/s100440200009">https://doi.org/10.1007/s100440200009</a>.
+</div>
+<div id="ref-pal2005" class="csl-entry" role="listitem">
+Pal, M. 2005. <span>“Random Forest Classifier for Remote Sensing Classification.”</span> <em>International Journal of Remote Sensing</em> 26 (1): 217–22. <a href="https://doi.org/10.1080/01431160412331269698">https://doi.org/10.1080/01431160412331269698</a>.
+</div>
+<div id="ref-rodriguez-galiano2012" class="csl-entry" role="listitem">
+Rodriguez-Galiano, V. F., B. Ghimire, J. Rogan, M. Chica-Olmo, and J. P. Rigol-Sanchez. 2012. <span>“An Assessment of the Effectiveness of a Random Forest Classifier for Land-Cover Classification.”</span> <em>ISPRS Journal of Photogrammetry and Remote Sensing</em> 67 (January): 93–104. <a href="https://doi.org/10.1016/j.isprsjprs.2011.11.002">https://doi.org/10.1016/j.isprsjprs.2011.11.002</a>.
+</div>
+<div id="ref-rodriguez-galiano2015" class="csl-entry" role="listitem">
+Rodriguez-Galiano, V., M. Sanchez-Castillo, M. Chica-Olmo, and M. Chica-Rivas. 2015. <span>“Machine Learning Predictive Models for Mineral Prospectivity: An Evaluation of Neural Networks, Random Forest, Regression Trees and Support Vector Machines.”</span> <em>Ore Geology Reviews</em> 71 (December): 804–18. <a href="https://doi.org/10.1016/j.oregeorev.2015.01.001">https://doi.org/10.1016/j.oregeorev.2015.01.001</a>.
+</div>
+<div id="ref-rokach2007" class="csl-entry" role="listitem">
+Rokach, Lior, and Oded Z. Maimon. 2007. <em>Data Mining With Decision Trees: Theory And Applications</em>. World Scientific.
+</div>
+<div id="ref-sutton2005a" class="csl-entry" role="listitem">
+Sutton, Clifton D. 2005. <span>“Classification and Regression Trees, Bagging, and Boosting.”</span> In, 24:303–29. Elsevier. <a href="https://doi.org/10.1016/S0169-7161(04)24011-1">https://doi.org/10.1016/S0169-7161(04)24011-1</a>.
+</div>
+<div id="ref-tinkamho1998" class="csl-entry" role="listitem">
+Tin Kam Ho. 1998. <span>“The Random Subspace Method for Constructing Decision Forests.”</span> <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em> 20 (8): 832–44. <a href="https://doi.org/10.1109/34.709601">https://doi.org/10.1109/34.709601</a>.
+</div>
+<div id="ref-toloi2011" class="csl-entry" role="listitem">
+Toloşi, Laura, and Thomas Lengauer. 2011. <span>“Classification with Correlated Features: Unreliability of Feature Ranking and Solutions.”</span> <em>Bioinformatics</em> 27 (14): 1986–94. <a href="https://doi.org/10.1093/bioinformatics/btr300">https://doi.org/10.1093/bioinformatics/btr300</a>.
+</div>
+<div id="ref-zhu2015" class="csl-entry" role="listitem">
+Zhu, Ruoqing, Donglin Zeng, and Michael R. Kosorok. 2015. <span>“Reinforcement Learning Trees.”</span> <em>Journal of the American Statistical Association</em> 110 (512): 1770–84. <a href="https://doi.org/10.1080/01621459.2015.1036994">https://doi.org/10.1080/01621459.2015.1036994</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

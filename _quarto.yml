@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "Evan Muise"
@@ -11,6 +12,8 @@ website:
         text: CV
       - href: publications.qmd
         text: Publications
+      - href: posts.qmd
+        text: Blog
 
 
 format:
