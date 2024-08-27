@@ -7,34 +7,6 @@
     "text": "Here are the papers I have been involved in!\nMuise, E.R., Andrew, M.E., Coops, N.C., Hermosilla, T., Burton, A.C., Ban, S.S., 2024. Disentangling linkages between satellite-derived indicators of forest structure and productivity for ecosystem monitoring. Sci Rep 14, 13717. https://doi.org/10.1038/s41598-024-64615-2\nMuise, E.R., Coops, N.C., Hermosilla, T., Ban, S.S., 2022. Assessing representation of remote sensing derived forest structure and land cover across a network of protected areas. Ecological Applications 32, e2603. https://doi.org/10.1002/eap.2603"
   },
   {
-    "objectID": "cv.html",
-    "href": "cv.html",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Education\nPhD. Forestry - Department of Forest Resources Management, University of British Columbia, 2025\nB.Sc Honours Environmental Science - Dalhousie University, 2020\nGIS Certificate - Dalhousie University, 2020\n\n\nPublications\nShen, X., Cao, L., Ma, Y., Coops, N.C., Muise, E.R., Wang, G., Cao, F. In Review. Estimating structure of understory bamboo for giant panda habitat by developing an advanced vertical vegetation classification approach using UAS-LiDAR data. Submitted to Int J Appl Earth Obs.\nMuise, E.R., Andrew, M.E., Coops, N.C., Hermosilla, T., Burton, A.C., Ban, S.S., 2024. Disentangling linkages between satellite-derived indicators of forest structure and productivity for ecosystem monitoring. Sci Rep 14, 13717. https://doi.org/10.1038/s41598-024-64615-2\nMuise, E.R., Coops, N.C., Hermosilla, T., Ban, S.S., 2022. Assessing representation of remote sensing derived forest structure and land cover across a network of protected areas. Ecological Applications 32, e2603. https://doi.org/10.1002/eap.2603\n\n\nPresentations\nMuise, E.R., Nicholas Coops, Chris Mulverhill, Txomin Hermosilla (2024). Estimating the integrated and individual impacts of the human footprint on forest ecosystem structure and function. Presentation at ForestSAT, Rotorua, New Zealand.\nMuise, E.R., Nicholas Coops, Txomin Hermosilla, Stephen Ban. (2022). Monitoring forest structural representation across a network of protected areas. Presentation at ForestSAT, Berlin, Germany.\nMuise, E.R., Nicholas Coops (2020). Documenting structural land cover change and disturbance across provincial BC parks for biodiversity assessment. Presentation at BC Park’s Living Lab Colloquium, Victoria, Canada.\n\n\nAwards\n2024; 2023; 2022 President’s Academic Excellence Initiative PhD Award\n2023 Oscar Soderman Memorial Bursary\n2023 R D Winkler Bursary in Forestry\nNSERC Undergrad Student Research Awards, 2018\n\n\nPrior Experience\nJunior Program Officer (PM-01) - Natural Resources Canada, Sept 2018 - May 2019\nUrban Forest Research Assistant - REMLab - Faculty of Management - Dalhousie University, May 2018 to Sept 2018"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Evan Muise",
-    "section": "",
-    "text": "Hello! My name is Evan, and I am a PhD candidate at the Integrated Remote Sensing Studio at the University of British Columbia.\nI currently research how we can use satellite products such as forest structure and productivity metrics to assess protected area effectiveness and ecological integrity. At the moment, I am working on assessing the impact of the human footprint on ecological integrity across Vancouver Island.\nMy broader research interests big data processing, and how we can use satellite imagery to assess biodiversity from space. I am hugely interested in reproducible science, and typically use R (and Quarto) in my day to day work, although I do dabble in Python and would love to learn Julia, if I ever find the time.\nOutside of work, I am an amateur birder and enjoy powerlifting, running, and playing recreational soccer. I spend a lot of my free time hiking and backpacking, and also enjoy playing video games.\nEvan"
-  },
-  {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "Blog",
-    "section": "",
-    "text": "A non-statistician’s guide to random forests\n\n\nRandom Forest is a powerful ensemble machine learning algorithm suitable for both classification and regression problems. By combining bootstrap aggregation with decision…\n\n\n\nEvan Muise\n\n\nDec 31, 2020\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "posts/2024-08-27_RF-primer/index.html",
     "href": "posts/2024-08-27_RF-primer/index.html",
     "title": "A non-statistician’s guide to random forests",
@@ -75,5 +47,33 @@
     "title": "A non-statistician’s guide to random forests",
     "section": "Diagnostics",
     "text": "Diagnostics\n\nOut of Bag Error\nThe out of bag error is a validation method specifically applied to algorithms making using of the bagging approach outlined in Section 2.2. For each tree, the model is trained on those samples that are within the bootstrap, and then tested on those that were not included on the bootstrap for each tree. Those that are not included in the bootstrap are termed the “Out of Bag sample”, and the error is calculated for each tree as the number of correctly predicted rows from the out of bag sample. It is recorded as each new tree is generated and the ensemble predictions change.\n\n\nVariable Importance\nDue to the high volume of variables potentially included in a Random Forest model, it can be relevant to the researcher to examine which variables contribute most to the model. This can be accomplished due to the recording of the Out of Bag error after each tree is generated. Each instantaneous (after each tree) error, can be compared to those found after the final trees are produced. This generates a score which can be used to rank the variables. Those with larger scores are considered more important than those with smaller scores (Zhu, Zeng, and Kosorok 2015). It should be noted that there is a bias in Random Forest to favour categorical variables with high numbers of levels, however this can be overcome using other variants on the Random Forest algorithm (Toloşi and Lengauer 2011; Altmann et al. 2010).\n\n\nCohen’s Kappa\nCohen’s kappa (\\(k\\)) is a measurement of categorical accuracy. It can be used with the Random Forest algorithm when used a classifier, but not as a regressor. \\(k\\) includes the possibility of chance agreement, rendering it a more robust measurement than percent agreement. It is calculated using the confusion matrix of a classification algorithm.\n\\[\\begin{equation}\n  k = \\frac{p_o - p_e}{1 - p_e} = 1 - \\frac{1 - p_o}{1 - p_e}\n  (\\#eq:kappa-eq)\n\\end{equation}\\]\nThe calculation for Cohen’s Kappa is shown in Equation @ref(eq:kappa-eq), where \\(p_o\\) is the observed agreement, and \\(p_e\\) is the hypothetical probability of chance agreement (Cohen 1960). More detailed equations and calculations used in Cohen’s kappa for nominal data of many classes can be found in Cohen (1960).\n\n\nReceiver Operating Characteristic Area Under the Curve\nThe Receiver Operating Characteristic (ROC) is a diagnostic plot that is used to examine binary classifiers, such as the one used in Section @ref(technique-application) in Figure @ref(fig:roc-auc). The ROC plots the false positive rate against the true positive rate for a binary classifier. This shows the performance of the model at all classification thresholds.\nThe Area Under the Curve (AUC) for the ROC is another diagnostic included in this plot. Higher AUC values are desirable, with a perfect model having an AUC of 1.0. The AUC is scale-invariant, and measures prediction quality regardless of the classification threshold (Fawcett 2006).\n\n\nRegression Diagnostics\nDiagnostic procedures for operating Random Forest as a regression algorithm are similar to other regression diagnostics. The \\(R^2\\) is commonly used alongside various error statistics such as Root Mean Square Error, Mean Absolute Error, among others. These can be compared between model parameters or other types of regression."
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Education\nPhD. Forestry - Department of Forest Resources Management, University of British Columbia, 2025\nB.Sc Honours Environmental Science - Dalhousie University, 2020\nGIS Certificate - Dalhousie University, 2020\n\n\nPublications\nShen, X., Cao, L., Ma, Y., Coops, N.C., Muise, E.R., Wang, G., Cao, F. In Review. Estimating structure of understory bamboo for giant panda habitat by developing an advanced vertical vegetation classification approach using UAS-LiDAR data. Submitted to Int J Appl Earth Obs.\nMuise, E.R., Andrew, M.E., Coops, N.C., Hermosilla, T., Burton, A.C., Ban, S.S., 2024. Disentangling linkages between satellite-derived indicators of forest structure and productivity for ecosystem monitoring. Sci Rep 14, 13717. https://doi.org/10.1038/s41598-024-64615-2\nMuise, E.R., Coops, N.C., Hermosilla, T., Ban, S.S., 2022. Assessing representation of remote sensing derived forest structure and land cover across a network of protected areas. Ecological Applications 32, e2603. https://doi.org/10.1002/eap.2603\n\n\nPresentations\nMuise, E.R., Nicholas Coops, Chris Mulverhill, Txomin Hermosilla (2024). Estimating the integrated and individual impacts of the human footprint on forest ecosystem structure and function. Presentation at ForestSAT, Rotorua, New Zealand.\nMuise, E.R., Nicholas Coops, Txomin Hermosilla, Stephen Ban. (2022). Monitoring forest structural representation across a network of protected areas. Presentation at ForestSAT, Berlin, Germany.\nMuise, E.R., Nicholas Coops (2020). Documenting structural land cover change and disturbance across provincial BC parks for biodiversity assessment. Presentation at BC Park’s Living Lab Colloquium, Victoria, Canada.\n\n\nAwards\n2024; 2023; 2022 President’s Academic Excellence Initiative PhD Award\n2023 Oscar Soderman Memorial Bursary\n2023 R D Winkler Bursary in Forestry\nNSERC Undergrad Student Research Awards, 2018\n\n\nPrior Experience\nJunior Program Officer (PM-01) - Natural Resources Canada, Sept 2018 - May 2019\nUrban Forest Research Assistant - REMLab - Faculty of Management - Dalhousie University, May 2018 to Sept 2018"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Evan Muise",
+    "section": "",
+    "text": "Hello! My name is Evan, and I am a PhD candidate at the Integrated Remote Sensing Studio at the University of British Columbia.\nI currently research how we can use satellite products such as forest structure and productivity metrics to assess protected area effectiveness and ecological integrity. At the moment, I am working on assessing the impact of the human footprint on ecological integrity across Vancouver Island.\nMy broader research interests big data processing, and how we can use satellite imagery to assess biodiversity from space. I am hugely interested in reproducible science, and typically use R (and Quarto) in my day to day work, although I do dabble in Python and would love to learn Julia, if I ever find the time.\nOutside of work, I am an amateur birder and enjoy powerlifting, running, and playing recreational soccer. I spend a lot of my free time hiking and backpacking, and also enjoy playing video games.\nEvan"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Blog",
+    "section": "",
+    "text": "A non-statistician’s guide to random forests\n\n\nRandom Forest is a powerful ensemble machine learning algorithm suitable for both classification and regression problems. By combining bootstrap aggregation with decision…\n\n\n\nEvan Muise\n\n\nDec 31, 2020\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
