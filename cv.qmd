@@ -1,0 +1,45 @@
+---
+title: "Curriculum Vitae"
+---
+
+# Education
+
+PhD. Forestry - Department of Forest Resources Management, University of British Columbia, 2025
+
+B.Sc Honours Environmental Science - Dalhousie University, 2020
+
+GIS Certificate - Dalhousie University, 2020
+
+# Publications
+
+Shen, X., Cao, L., Ma, Y., Coops, N.C., **Muise, E.R.**, Wang, G., Cao, F. In Review. Estimating structure of understory bamboo for giant panda habitat by developing an advanced vertical vegetation classification approach using UAS-LiDAR data. Submitted to Int J Appl Earth Obs.
+
+**Muise, E.R**., Andrew, M.E., Coops, N.C., Hermosilla, T., Burton, A.C., Ban, S.S., 2024. Disentangling linkages between satellite-derived indicators of forest structure and productivity for ecosystem monitoring. Sci Rep 14, 13717. <https://doi.org/10.1038/s41598-024-64615-2>
+
+**Muise, E.R.**, Coops, N.C., Hermosilla, T., Ban, S.S., 2022. Assessing representation of remote sensing derived forest structure and land cover across a network of protected areas. Ecological Applications 32, e2603. <https://doi.org/10.1002/eap.2603>
+
+# Presentations
+
+**Muise, E.R.**, Nicholas Coops, Chris Mulverhill, Txomin Hermosilla (2024). Estimating the integrated and individual impacts of the human footprint on forest ecosystem structure and function. Presentation at ForestSAT, Rotorua, New Zealand.
+
+**Muise, E.R.**, Nicholas Coops, Txomin Hermosilla, Stephen Ban. (2022). Monitoring forest structural representation across a network of protected areas. Presentation at ForestSAT, Berlin, Germany.
+
+**Muise, E.R.**, Nicholas Coops (2020). Documenting structural land cover change and disturbance across provincial BC parks for biodiversity assessment. Presentation at BC Park's Living Lab Colloquium, Victoria, Canada.
+
+# Awards
+
+2024; 2023; 2022 President's Academic Excellence Initiative PhD Award
+
+2023 Oscar Soderman Memorial Bursary
+
+2023 R D Winkler Bursary in Forestry
+
+NSERC Undergrad Student Research Awards, 2018
+
+# Prior Experience
+
+Junior Program Officer (PM-01) - Natural Resources Canada, Sept 2018 - May 2019
+
+Urban Forest Research Assistant - REMLab - Faculty of Management - Dalhousie University, May 2018 to Sept 2018
+
+# 
