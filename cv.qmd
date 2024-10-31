@@ -4,42 +4,70 @@ title: "Curriculum Vitae"
 
 # Education
 
-PhD. Forestry - Department of Forest Resources Management, University of British Columbia, 2025
+**PhD.** Forestry, University of British Columbia, February 2022 - August 2025 (expected completion)
 
-B.Sc Honours Environmental Science - Dalhousie University, 2020
+**MSc.** Environmental Studies, University of Victoria, September 2019 - August 2021
 
-GIS Certificate - Dalhousie University, 2020
+**BSc.** Geography & Statistics minor (Honours with distinction), September 2015 - April 2019
 
-# Publications
+# Publications 
 
-Shen, X., Cao, L., Ma, Y., Coops, N.C., **Muise, E.R.**, Wang, G., Cao, F. In Review. Estimating structure of understory bamboo for giant panda habitat by developing an advanced vertical vegetation classification approach using UAS-LiDAR data. Submitted to Int J Appl Earth Obs.
+(6 total, citations = 52, h-index = 4)\
+Google scholar: https://scholar.google.com/citations?user=cieOQPYAAAAJ
 
-**Muise, E.R**., Andrew, M.E., Coops, N.C., Hermosilla, T., Burton, A.C., Ban, S.S., 2024. Disentangling linkages between satellite-derived indicators of forest structure and productivity for ecosystem monitoring. Sci Rep 14, 13717. <https://doi.org/10.1038/s41598-024-64615-2>
+1.  **Travers-Smith, H**, Coops, N.C., Mulverhill, C., Wulder, M.A, Ignace, D & Lantz, T.C. (2024). Mapping vegetation height and identifying the northern forest limit across Canada using ICESat-2, Landsat time series and topographic data. *Remote Sensing of Environment.* (Phd thesis). https://doi.org/10.1016/j.rse.2024.114097.
 
-**Muise, E.R.**, Coops, N.C., Hermosilla, T., Ban, S.S., 2022. Assessing representation of remote sensing derived forest structure and land cover across a network of protected areas. Ecological Applications 32, e2603. <https://doi.org/10.1002/eap.2603>
+2.  Olthof, I., Fraser, R. H., van der Sluijs, J., & **Travers-Smith, H.** (2023). Detecting long-term Arctic surface water changes. *Nature Climate Change*, 13(11), Article 11. DOI:10.1038/s41558-02301836-9.
+
+3.  **Travers-Smith, H.,** Lantz, T.C., Fraser, R.H.,
+    & S.V. Kokelj. (2022). Changes in surface water dynamics across
+    Northwestern Canada are influenced by wildfire and permafrost thaw. *Environmental
+    Research Letters*. DOI:10.1088/1748-9326/ac97f7. (MSc thesis).
+
+4.  **Travers-Smith, H.,** Lantz, T.C., Fraser, R.H.
+    (2021). Surface Water Dynamics and Rapid Lake Drainage in the Western Canadian Subarctic. *Journal of Geophysical Research: Biogeosciences.* DOI:10.1029/2021JG006445. (MSc thesis).
+
+5.  **Travers-Smith, H.,** Giannini, F., Sastri, A., Costa, M. (2021). Estimating chlorophyll-a concentration from fluorescence measurements aboard ships of opportunity. *Frontiers in Marine Science*. DOI: 10.3389/fmars.2021.686750. (BSc honours thesis).
+
+6.  **Travers-Smith, H.,** Lantz, T.C. (2020). Leading edge disequilibrium in sub-Arctic alder and spruce populations. *Ecosphere.* 11,7. DOI: 10.1002/ecs2.3118. (BSc directed study).
 
 # Presentations
 
-**Muise, E.R.**, Nicholas Coops, Chris Mulverhill, Txomin Hermosilla (2024). Estimating the integrated and individual impacts of the human footprint on forest ecosystem structure and function. ForestSAT. September 9th-13th, 2024. Rotorua, New Zealand.
+**Travers-Smith, H**, Coops, N.C., Mulverhill, C., Wulder, M.A., Ignace, D. & Lantz, T.C. (2024). Changes in vegetation structure across the forest-tundra ecotone using satellite remote sensing. **ArcticNet Annual Scientific Meeting**. Ottawa, Canada. December 2025. Oral presentation.
 
-**Muise, E.R.**, Nicholas Coops, Txomin Hermosilla, Stephen Ban. (2022). Monitoring forest structural representation across a network of protected areas. ForestSAT. August 29th - September 3rd, 2024. Berlin, Germany.
+**Travers-Smith, H**, Coops, N.C., Mulverhill, C., Wulder, M.A., Ignace, D. & Lantz, T.C. (2024). Mapping vegetation height and identifying the northern forest limit across Canada. **Canadian
+Symposium of Remote Sensing**. Halifax, Canada. June 10-13. Student competition, oral presentation.
 
-**Muise, E.R.**, Nicholas Coops (2020). Documenting structural land cover change and disturbance across provincial BC parks for biodiversity assessment. BC Park's Living Lab Colloquium. December 1st, 2020. Victoria, Canada.
+**Travers-Smith, H**, Coops, N.C., & Lantz, T.C. (2022) Using spaceborne LiDAR to map canopy height
+across the forest-tundra ecotone. **ArcticNet Annual Scientific Meeting**. Toronto, Canada. December 4-9. Poster.
+
+**Travers-Smith, H**, Coops, N.C., & Lantz, T.C. (2020). Terrain Factors Mediate
+Change in Sub-Arctic Lakes. **ArcticNet Annual Scientific Meeting**.
+Online. Poster.
 
 # Awards
 
-2024; 2023; 2022 President's Academic Excellence Initiative PhD Award
+**Total PhD funding: \$243,000 (2022-2024)\
+Total MSc funding: \$47,500 (2019-2020)**
 
-2023 Oscar Soderman Memorial Bursary
+-   Canadian Society for Remote Sensing Award – Conference Travel, **2024,** \$3,000
 
-2023 R D Winkler Bursary in Forestry
+-   NSERC - Canada Graduate Scholarships — Doctoral (CGS D), **2022**, \$120,000
 
-NSERC Undergrad Student Research Awards, 2018
+-    University of British Columbia – Four Year Doctoral Fellowship, **2022**, \$120,000 
 
-# Prior Experience
+-   NSERC - Canada Graduate Scholarships — Masters (CGS M), **2020**, \$17,500
 
-Junior Program Officer (PM-01) - Natural Resources Canada, Sept 2018 - May 2019
+-   W. Weston Family Award, **2020**, \$15,000
 
-Urban Forest Research Assistant - REMLab - Faculty of Management - Dalhousie University, May 2018 to Sept 2018
+-   BC Graduate Scholarship, **2019**, \$15,000
 
-# 
+-   NSERC Undergraduate Student Research Award, **2019, 2018**
+
+-   Jamie Cassels Undergraduate Research Award, **2018**
+
+-   Maureen McLeod Scholarship in Geography, **2018**
+
+-   Mr & Mrs. John L. Wyatt Price Scholarship in Geography, **2018**
+
+-   University of Victoria President's Scholarship, **2018**

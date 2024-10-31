@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Evan Muise</title>
+<title>Hana Travers-Smith | PhD Candidate – Hana Travers-Smith</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,11 +78,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Evan Muise</span>
+    <span class="navbar-title">Hana Travers-Smith</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -95,17 +95,9 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./publications.html"> 
-<span class="menu-text">Publications</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./posts.html"> 
-<span class="menu-text">Blog</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -116,42 +108,36 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-trestles content">
+<div class="quarto-about-trestles">
   <div class="about-entity">
-    <img src="media/Bud1.jpg" class="about-image
+    <img src="media/profile.png" class="about-image
   round " style="height: 20em; width: 20em;">
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Evan Muise</h1>
+<h1 class="title">Hana Travers-Smith | PhD Candidate</h1>
 </div>
 <div class="quarto-title-meta">
   </div>
 </header>
     <div class="about-links">
-  <a href="https://www.linkedin.com/in/evanmuise/?originalSubdomain=ca" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
+  <a href="https://scholar.google.com/citations?user=cieOQPYAAAAJ" class="about-link" rel="" target="">
+    <i class="bi bi-googlescholar"></i>
+     <span class="about-link-text">googlescholar</span>
   </a>
-  <a href="https://x.com/evanmuise" class="about-link" rel="" target="">
-    <i class="bi bi-twitter"></i>
-     <span class="about-link-text">Twitter/X</span>
-  </a>
-  <a href="https://github.com/emuise" class="about-link" rel="" target="">
+  <a href="https://github.com/hztraver" class="about-link" rel="" target="">
     <i class="bi bi-github"></i>
      <span class="about-link-text">GitHub</span>
   </a>
-  <a href="mailto:evanmuis@student.ubc.ca" class="about-link" rel="" target="">
+  <a href="mailto:hanats@student.ubc.ca" class="about-link" rel="" target="">
     <i class="bi bi-envelope-at"></i>
      <span class="about-link-text">Email</span>
   </a>
 </div>
   </div>
   <div class="about-contents"><main class="content" id="quarto-document-content">
-<p>Hello! My name is Evan, and I am a PhD candidate at the Integrated Remote Sensing Studio at the University of British Columbia.</p>
-<p>I currently research how we can use satellite products such as forest structure and productivity metrics to assess protected area effectiveness and ecological integrity. At the moment, I am working on assessing the impact of the human footprint on ecological integrity across Vancouver Island.</p>
-<p>My broader research interests are big data processing, and how we can use satellite imagery to assess biodiversity from space. I am hugely interested in reproducible science, and typically use R (and Quarto) in my day to day work, although I do dabble in Python and would love to learn Julia, if I ever find the time.</p>
-<p>Outside of work, I am an amateur birder and enjoy powerlifting, running, and playing recreational soccer. I spend a lot of my free time hiking and backpacking, and also enjoy playing video games.</p>
-<p>Evan</p>
+<p>Hello! I am PhD Candidate at the University of British Columbia under eh supervision of Dr.&nbsp;Nicholas Coops. My research uses remote sensing technology to understand climate-driven changes in vegetation across the Canadian arctic and sub-arctic.</p>
+<p>Outside of work I enjoy playing soccer and ultimate frisbee and playing with my cat Henry.</p>
+<p>Hana</p>
 
 
 </main></div>
@@ -185,18 +171,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -228,7 +203,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -236,7 +233,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

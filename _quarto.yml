@@ -3,18 +3,13 @@ project:
   output-dir: docs
 
 website:
-  title: "Evan Muise"
+  title: "Hana Travers-Smith"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - href: cv.qmd
         text: CV
-      - href: publications.qmd
-        text: Publications
-      - href: posts.qmd
-        text: Blog
-
 
 format:
   html:

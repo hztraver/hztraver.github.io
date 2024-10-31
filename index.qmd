@@ -1,31 +1,24 @@
 ---
-title: "Evan Muise"
-image: media/Bud1.jpg
+title: "Hana Travers-Smith | PhD Candidate"
+image: media/profile.png
 about:
   template: trestles
   image-shape: round
   image-width: 20em
   links: 
-    - icon: linkedin
-      text: LinkedIn
-      href: https://www.linkedin.com/in/evanmuise/?originalSubdomain=ca
-    - icon: twitter
-      text: Twitter/X
-      href: https://x.com/evanmuise
+    - icon: googlescholar
+      text: googlescholar
+      href: https://scholar.google.com/citations?user=cieOQPYAAAAJ
     - icon: github
       text: GitHub
-      href: https://github.com/emuise
+      href: https://github.com/hztraver
     - icon: envelope-at
       text: Email
-      href: mailto:evanmuis@student.ubc.ca
+      href: mailto:hanats@student.ubc.ca
 ---
 
-Hello! My name is Evan, and I am a PhD candidate at the Integrated Remote Sensing Studio at the University of British Columbia.
+Hello! I am PhD Candidate at the University of British Columbia under eh supervision of Dr. Nicholas Coops. My research uses remote sensing technology to understand climate-driven changes in vegetation across the Canadian arctic and sub-arctic.
 
-I currently research how we can use satellite products such as forest structure and productivity metrics to assess protected area effectiveness and ecological integrity. At the moment, I am working on assessing the impact of the human footprint on ecological integrity across Vancouver Island.
+Outside of work I enjoy playing soccer and ultimate frisbee and playing with my cat Henry.
 
-My broader research interests are big data processing, and how we can use satellite imagery to assess biodiversity from space. I am hugely interested in reproducible science, and typically use R (and Quarto) in my day to day work, although I do dabble in Python and would love to learn Julia, if I ever find the time.
-
-Outside of work, I am an amateur birder and enjoy powerlifting, running, and playing recreational soccer. I spend a lot of my free time hiking and backpacking, and also enjoy playing video games.
-
-Evan
+Hana
