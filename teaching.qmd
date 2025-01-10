@@ -18,7 +18,7 @@ I have extensive experience as a Teaching Assistant across a range of undergradu
 
 #### [Introduction to Terrain and Hydrology ](https://ubc-geomatics-community-of-practice.github.io/NRES341-Intermediate-Geomatics-for-Natural-Resource-Management/terrain-hydrology-analysis.html)
 
-#### [Using for GIS for suitability analysis](https://ubc-geomatics-community-of-practice.github.io/NRES341-Intermediate-Geomatics-for-Natural-Resource-Management/sea-level-rise-suitability.html)
+#### [Using GIS for suitability analysis](https://ubc-geomatics-community-of-practice.github.io/NRES341-Intermediate-Geomatics-for-Natural-Resource-Management/sea-level-rise-suitability.html)
 
 ### Advanced GIS for Environmental Management (Course code: GEM 511)
 #### [Advanced Terrain Analysis and Riparian Area Management](https://ubc-geomatics-community-of-practice.github.io/GEM511-Advanced-GIS-for-Environmental-Management/hydrology-analysis.html)
