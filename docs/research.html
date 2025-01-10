@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Blog – Hana Travers-Smith</title>
+<title>Research – Hana Travers-Smith</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,65 +66,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -156,6 +96,10 @@ window.Quarto = {
     <a class="nav-link" href="./cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./research.html" aria-current="page"> 
+<span class="menu-text">Research</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -168,14 +112,22 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#remote-sensing-of-the-northern-treeline" id="toc-remote-sensing-of-the-northern-treeline" class="nav-link active" data-scroll-target="#remote-sensing-of-the-northern-treeline">Remote sensing of the northern treeline</a></li>
+  <li><a href="#using-drones-to-map-carbon-storage-across-treelines" id="toc-using-drones-to-map-carbon-storage-across-treelines" class="nav-link" data-scroll-target="#using-drones-to-map-carbon-storage-across-treelines">Using drones to map carbon storage across treelines</a></li>
+  <li><a href="#lakes-lakes-lakes" id="toc-lakes-lakes-lakes" class="nav-link" data-scroll-target="#lakes-lakes-lakes">Lakes, lakes, lakes</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog</h1>
+<h1 class="title">Research</h1>
 </div>
 
 
@@ -192,18 +144,44 @@ window.Quarto = {
 </header>
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-
+<section id="remote-sensing-of-the-northern-treeline" class="level2">
+<h2 class="anchored" data-anchor-id="remote-sensing-of-the-northern-treeline">Remote sensing of the northern treeline</h2>
+<p>High-latitudes are experiencing some of the most rapid climatic hanges on the planet. This is driving shifts in what types of plants can grow and how productive they are. My PhD research focuses on using satellite remote sensing imagery to model vegetation height and cover across the Canadian forest-tundra ecotone. I use historical satellite images to map change in vegetation structure from 1985 to the present day and understand how the limit of northern boreal forests has responded to climate. This research has important implications for habitat monitoring for a range of boreal and tundra wildlife.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://doi.org/10.1016/j.rse.2024.114097"><img src="media/treelinemap.png" class="img-fluid figure-img" alt="Map of canopy height across northern Canada generated using satellite imagery."></a></p>
+<figcaption>Map of canopy height across northern Canada generated using satellite imagery.</figcaption>
+</figure>
 </div>
-<div class="listing-no-matching d-none">
-No matching items
+</section>
+<section id="using-drones-to-map-carbon-storage-across-treelines" class="level2">
+<h2 class="anchored" data-anchor-id="using-drones-to-map-carbon-storage-across-treelines">Using drones to map carbon storage across treelines</h2>
+<p>Warming temperatures and changes in plant composition at the northern treeline can alter the amount of carbon stored in permafrost soils. My PhD research also uses high-resolution drone imagery to map tree and shrub density and associate vegetation structure with soil organic carbon storage. We also use drone imagery to validate and understand better understand spectral patterns observed in moderate resolution satellite data. This field research was conducted north of Inuvik, NWT on the traditional territory of the Inuvialuit peoples.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://doi.org/10.1139/as-2024-0048"><img src="media/image0000021 (1).jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400" alt="Hana with the Mavic-2 near Inuvik, NWT."></a></p>
+</figure>
 </div>
-</div></main> <!-- /main -->
+<figcaption>Hana with the Mavic-2 near Inuvik, NWT.</figcaption>
+</figure>
+</div>
+</section>
+<section id="lakes-lakes-lakes" class="level2">
+<h2 class="anchored" data-anchor-id="lakes-lakes-lakes">Lakes, lakes, lakes</h2>
+<p>My MSc research focused on using satellite images to track changes in the number and size of lakes across the western Canadian Arctic. We also collected water samples to understand how permafrost thaw impacts water quality in different site types across the Tuktoyaktuk Coastlands and the Mackenzie River Delta, NWT.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://iopscience.iop.org/article/10.1088/1748-9326/ac97f7"><img src="media/IMG_5003.jpg" class="img-fluid figure-img" width="700" alt="Flying over lakes in the Mackenzie Plain, NWT."></a></p>
+<figcaption>Flying over lakes in the Mackenzie Plain, NWT.</figcaption>
+</figure>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
