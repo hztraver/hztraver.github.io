@@ -4,9 +4,9 @@ title: "Research"
 
 ## Habitat change for barren-ground caribou
 
-My current research focuses on changes in habitat quality for the Porcupine caribou herd in northern Yukon. In particular I am interested in mapping the cover of lichen patches that caribou depend on for their winter diet. Lichens grow very slowly and are extremely sensitive to disturbances like wildfires, taking up to 70 years to recover after being burned. They can also be outcompeted by shrubs that grow much more quickly and take up available space. Overall, lichen cover is decreasing across the tundra and northern boreal, and remaining lichen patches are getting smaller and more dispersed due fires and shrub growth. Overall, my research will explore the effects of disturbance and shrubification on caribou movement and habitat use. 
+My current research focuses on changes in habitat quality for the Porcupine caribou herd in northern Yukon. In particular I am interested in mapping the cover of lichen patches that caribou depend on for their winter diet. Lichens grow very slowly and are extremely sensitive to disturbances like wildfires, taking up to 70 years to recover after being burned. They can also be outcompeted by shrubs that grow much more quickly and take up available space. Overall, lichen cover is decreasing across the tundra and northern boreal, and remaining lichen patches are getting smaller and more dispersed due fires and shrub growth. Overall, my research will explore the effects of disturbance and shrubification on caribou movement and habitat use.
 
-[![Woodland lichen patch in central Yukon. Photo credit: Sarah Naughtin](media/sarah_lichen.png)]
+\[![Woodland lichen patch in central Yukon. Photo credit: Sarah Naughtin](media/sarah_lichen.jpg)\]
 
 ## Remote sensing of the northern treeline
 
