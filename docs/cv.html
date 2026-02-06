@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,10 +35,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ddd961a2510921635943dfbbd19534c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -151,15 +151,16 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="education" class="level1">
 <h1>Education</h1>
-<p><strong>PhD.</strong> Forestry, University of British Columbia, February 2022 - August 2025 (expected completion)</p>
-<p><strong>MSc.</strong> Environmental Studies, University of Victoria, September 2019 - August 2021</p>
-<p><strong>BSc.</strong> Geography &amp; Statistics minor (Honours with distinction), September 2015 - April 2019</p>
+<p><strong>PhD.</strong> Forestry, University of British Columbia, 2022 - 2025</p>
+<p><strong>MSc.</strong> Environmental Studies, University of Victoria, 2019 - 2021</p>
+<p><strong>BSc.</strong> Geography &amp; Statistics minor (Honours with distinction), 2015 - 2019</p>
 </section>
 <section id="publications" class="level1">
 <h1>Publications</h1>
-<p>(7 total, citations = 60, h-index = 5)<br>
+<p>(8 total, citations = 102, h-index = 6)<br>
 Google scholar: https://scholar.google.com/citations?user=cieOQPYAAAAJ</p>
 <ol type="1">
+<li><p><strong>Travers-Smith, H</strong>., Coops, N.C., Mulverhill, C., Wulder, M.A., Lantz, T.C. &amp; Ignace, D.D. (2025). Satellite observations reveal stable forest limits and shrub expansion across the Canadian forest-tundra ecotone. <em>Environmental Research Letters</em>. DOI 10.1088/1748-9326/adfc7f.</p></li>
 <li><p><strong>Travers-Smith, H</strong>., Coops, N.C., Lantz, T.C., Hamp, M., Ignace, D. &amp; Wulder, M.A.&nbsp;(2024). Vegetation structure and soil organic carbon storage across northern forest-tundra ecotones in continuous permafrost. <em>Arctic Science</em>. https://doi.org/10.1139/as-2024-0048.</p></li>
 <li><p><strong>Travers-Smith, H.</strong>, Coops, N.C., Mulverhill, C., Wulder, M.A, Ignace, D &amp; Lantz, T.C. (2024). Mapping vegetation height and identifying the northern forest limit across Canada using ICESat-2, Landsat time series and topographic data. <em>Remote Sensing of Environment.</em> (Phd thesis). https://doi.org/10.1016/j.rse.2024.114097.</p></li>
 <li><p>Olthof, I., Fraser, R. H., van der Sluijs, J., &amp; <strong>Travers-Smith, H.</strong> (2023). Detecting long-term Arctic surface water changes. <em>Nature Climate Change</em>, 13(11), Article 11. DOI:10.1038/s41558-02301836-9.</p></li>
@@ -280,8 +281,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -392,7 +391,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

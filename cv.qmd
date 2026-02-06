@@ -4,30 +4,32 @@ title: "Curriculum Vitae"
 
 # Education
 
-**PhD.** Forestry, University of British Columbia, February 2022 - August 2025 (expected completion)
+**PhD.** Forestry, University of British Columbia, 2022 - 2025
 
-**MSc.** Environmental Studies, University of Victoria, September 2019 - August 2021
+**MSc.** Environmental Studies, University of Victoria, 2019 - 2021
 
-**BSc.** Geography & Statistics minor (Honours with distinction), September 2015 - April 2019
+**BSc.** Geography & Statistics minor (Honours with distinction), 2015 - 2019
 
 # Publications
 
-(7 total, citations = 60, h-index = 5)\
+(8 total, citations = 102, h-index = 6)\
 Google scholar: https://scholar.google.com/citations?user=cieOQPYAAAAJ
 
-1.  **Travers-Smith, H**., Coops, N.C., Lantz, T.C., Hamp, M., Ignace, D. & Wulder, M.A. (2024). Vegetation structure and soil organic carbon storage across northern forest-tundra ecotones in continuous permafrost. *Arctic Science*. https://doi.org/10.1139/as-2024-0048.
+1.  **Travers-Smith, H**., Coops, N.C., Mulverhill, C., Wulder, M.A., Lantz, T.C. & Ignace, D.D. (2025). Satellite observations reveal stable forest limits and shrub expansion across the Canadian forest-tundra ecotone. *Environmental Research Letters*. DOI 10.1088/1748-9326/adfc7f.
 
-2.  **Travers-Smith, H.**, Coops, N.C., Mulverhill, C., Wulder, M.A, Ignace, D & Lantz, T.C. (2024). Mapping vegetation height and identifying the northern forest limit across Canada using ICESat-2, Landsat time series and topographic data. *Remote Sensing of Environment.* (Phd thesis). https://doi.org/10.1016/j.rse.2024.114097.
+2.  **Travers-Smith, H**., Coops, N.C., Lantz, T.C., Hamp, M., Ignace, D. & Wulder, M.A. (2024). Vegetation structure and soil organic carbon storage across northern forest-tundra ecotones in continuous permafrost. *Arctic Science*. https://doi.org/10.1139/as-2024-0048.
 
-3.  Olthof, I., Fraser, R. H., van der Sluijs, J., & **Travers-Smith, H.** (2023). Detecting long-term Arctic surface water changes. *Nature Climate Change*, 13(11), Article 11. DOI:10.1038/s41558-02301836-9.
+3.  **Travers-Smith, H.**, Coops, N.C., Mulverhill, C., Wulder, M.A, Ignace, D & Lantz, T.C. (2024). Mapping vegetation height and identifying the northern forest limit across Canada using ICESat-2, Landsat time series and topographic data. *Remote Sensing of Environment.* (Phd thesis). https://doi.org/10.1016/j.rse.2024.114097.
 
-4.  **Travers-Smith, H.,** Lantz, T.C., Fraser, R.H., & S.V. Kokelj. (2022). Changes in surface water dynamics across Northwestern Canada are influenced by wildfire and permafrost thaw. *Environmental Research Letters*. DOI:10.1088/1748-9326/ac97f7. (MSc thesis).
+4.  Olthof, I., Fraser, R. H., van der Sluijs, J., & **Travers-Smith, H.** (2023). Detecting long-term Arctic surface water changes. *Nature Climate Change*, 13(11), Article 11. DOI:10.1038/s41558-02301836-9.
 
-5.  **Travers-Smith, H.,** Lantz, T.C., Fraser, R.H. (2021). Surface Water Dynamics and Rapid Lake Drainage in the Western Canadian Subarctic. *Journal of Geophysical Research: Biogeosciences.* DOI:10.1029/2021JG006445. (MSc thesis).
+5.  **Travers-Smith, H.,** Lantz, T.C., Fraser, R.H., & S.V. Kokelj. (2022). Changes in surface water dynamics across Northwestern Canada are influenced by wildfire and permafrost thaw. *Environmental Research Letters*. DOI:10.1088/1748-9326/ac97f7. (MSc thesis).
 
-6.  **Travers-Smith, H.,** Giannini, F., Sastri, A., Costa, M. (2021). Estimating chlorophyll-a concentration from fluorescence measurements aboard ships of opportunity. *Frontiers in Marine Science*. DOI: 10.3389/fmars.2021.686750. (BSc honours thesis).
+6.  **Travers-Smith, H.,** Lantz, T.C., Fraser, R.H. (2021). Surface Water Dynamics and Rapid Lake Drainage in the Western Canadian Subarctic. *Journal of Geophysical Research: Biogeosciences.* DOI:10.1029/2021JG006445. (MSc thesis).
 
-7.  **Travers-Smith, H.,** Lantz, T.C. (2020). Leading edge disequilibrium in sub-Arctic alder and spruce populations. *Ecosphere.* 11,7. DOI: 10.1002/ecs2.3118. (BSc directed study).
+7.  **Travers-Smith, H.,** Giannini, F., Sastri, A., Costa, M. (2021). Estimating chlorophyll-a concentration from fluorescence measurements aboard ships of opportunity. *Frontiers in Marine Science*. DOI: 10.3389/fmars.2021.686750. (BSc honours thesis).
+
+8.  **Travers-Smith, H.,** Lantz, T.C. (2020). Leading edge disequilibrium in sub-Arctic alder and spruce populations. *Ecosphere.* 11,7. DOI: 10.1002/ecs2.3118. (BSc directed study).
 
 # Presentations
 

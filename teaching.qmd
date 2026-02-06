@@ -2,23 +2,26 @@
 title: "Teaching"
 ---
 
-I have extensive experience as a Teaching Assistant across a range of undergraduate and graduate courses in geomatics and ecology. Explore the links below to see open-access teaching resources I have authored at UBC as part of the Forestry curriculum.
+I have extensive experience as a Teaching Assistant across a range of undergraduate and graduate courses in geomatics and ecology. Explore the links below to see open-access teaching resources I have written at UBC as part of the Forestry curriculum.
 
 ### Introduction to Geomatics for Natural Resource Management (Course code: NRES 241)
+
 #### [Exploring Spatial data using Climate NA](https://ubc-geomatics-community-of-practice.github.io/NRES241-Introduction-to-Geomatics-for-Natural-Resource-Management/ClimateNA.html)
 
 #### [Introduction to Spatial Overay in QGIS](https://ubc-geomatics-community-of-practice.github.io/NRES241-Introduction-to-Geomatics-for-Natural-Resource-Management/Overlay.html)
 
 #### [Historical Imagery using Airphotos](https://ubc-geomatics-community-of-practice.github.io/NRES241-Introduction-to-Geomatics-for-Natural-Resource-Management/air-photos.html)
 
-### Intermediate Geomatics for Natural Resource Management (Course code: NRES 341) 
+### Intermediate Geomatics for Natural Resource Management (Course code: NRES 341)
+
 #### [Landsat Image Processing](https://ubc-geomatics-community-of-practice.github.io/NRES341-Intermediate-Geomatics-for-Natural-Resource-Management/landsat-image-processing.html)
 
 #### [Lidar Point Clouds for Forest Management](https://ubc-geomatics-community-of-practice.github.io/NRES341-Intermediate-Geomatics-for-Natural-Resource-Management/lidar-forest-management.html)
 
-#### [Introduction to Terrain and Hydrology ](https://ubc-geomatics-community-of-practice.github.io/NRES341-Intermediate-Geomatics-for-Natural-Resource-Management/terrain-hydrology-analysis.html)
+#### [Introduction to Terrain and Hydrology](https://ubc-geomatics-community-of-practice.github.io/NRES341-Intermediate-Geomatics-for-Natural-Resource-Management/terrain-hydrology-analysis.html)
 
 #### [Using GIS for suitability analysis](https://ubc-geomatics-community-of-practice.github.io/NRES341-Intermediate-Geomatics-for-Natural-Resource-Management/sea-level-rise-suitability.html)
 
 ### Advanced GIS for Environmental Management (Course code: GEM 511)
+
 #### [Advanced Terrain Analysis and Riparian Area Management](https://ubc-geomatics-community-of-practice.github.io/GEM511-Advanced-GIS-for-Environmental-Management/hydrology-analysis.html)

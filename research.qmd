@@ -2,15 +2,21 @@
 title: "Research"
 ---
 
+## Habitat change for barren-ground caribou
+
+My current research focuses on changes in habitat quality for the Porcupine caribou herd in northern Yukon. In particular I am interested in mapping the cover of lichen patches that caribou depend on for their winter diet. Lichens grow very slowly and are extremely sensitive to disturbances like wildfires, taking up to 70 years to recover after being burned. They can also be outcompeted by shrubs that grow much more quickly and take up available space. Overall, lichen cover is decreasing across the tundra and northern boreal, and remaining lichen patches are getting smaller and more dispersed due fires and shrub growth. Overall, my research will explore the effects of disturbance and shrubification on caribou movement and habitat use. 
+
+[![Woodland lichen patch in central Yukon. Photo credit: Sarah Naughtin](media/sarah_lichen.png)]
+
 ## Remote sensing of the northern treeline
 
-High-latitudes are experiencing some of the most rapid climatic hanges on the planet. This is driving shifts in what types of plants can grow and how productive they are. My PhD research focuses on using satellite remote sensing imagery to model vegetation height and cover across the Canadian forest-tundra ecotone. I use historical satellite images to map change in vegetation structure from 1985 to the present day and understand how the limit of northern boreal forests has responded to climate. This research has important implications for habitat monitoring for a range of boreal and tundra wildlife.
+High-latitudes are experiencing some of the most rapid climatic changes on the planet. This is shifts in what types of plants can grow and how productive they are. My PhD research focused on using satellite remote sensing imagery from Landsat and ICESat-2 to model vegetation height and cover across the Canadian forest-tundra ecotone. I also used historical satellite images to map change in vegetation structure from 1985 to the present day and understand how the limit of northern boreal forests has responded to climate change. This research has important implications for habitat monitoring for a range of boreal and tundra wildlife.
 
-[![Map of canopy height across northern Canada generated using satellite imagery.](media/treelinemap.png)](https://doi.org/10.1016/j.rse.2024.114097)
+[![Map of canopy height and the northern forest limit across Canada generated using Landsat satellite time-series.](media/timoney_line.png)](https://doi.org/10.1016/j.rse.2024.114097)
 
 ## Using drones to map carbon storage across treelines
 
-Warming temperatures and changes in plant composition at the northern treeline can alter the amount of carbon stored in permafrost soils. My PhD research also uses high-resolution drone imagery to map tree and shrub density and associate vegetation structure with soil organic carbon storage. We also use drone imagery to validate and understand better understand spectral patterns observed in moderate resolution satellite data. This field research was conducted north of Inuvik, NWT on the traditional territory of the Inuvialuit peoples.
+Warming temperatures and changes in plant composition at the northern treeline can alter the amount of carbon stored in permafrost soils. My PhD research also used high-resolution drone imagery to map tree and shrub density and associate vegetation structure with soil organic carbon storage. We also use drone imagery to validate and understand better understand spectral patterns observed in moderate resolution satellite data. This field research was conducted north of Inuvik, NWT on the traditional territory of the Inuvialuit peoples.
 
 [![Hana with the Mavic-2 near Inuvik, NWT.](media/image0000021%20(1).jpg){fig-align="center" width="400"}](https://doi.org/10.1139/as-2024-0048)
 
