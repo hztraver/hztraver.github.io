@@ -4,14 +4,14 @@
     "href": "teaching.html",
     "title": "Teaching",
     "section": "",
-    "text": "I have extensive experience as a Teaching Assistant across a range of undergraduate and graduate courses in geomatics and ecology. Explore the links below to see open-access teaching resources I have authored at UBC as part of the Forestry curriculum.\n\nIntroduction to Geomatics for Natural Resource Management (Course code: NRES 241)\n\nExploring Spatial data using Climate NA\n\n\nIntroduction to Spatial Overay in QGIS\n\n\nHistorical Imagery using Airphotos\n\n\n\nIntermediate Geomatics for Natural Resource Management (Course code: NRES 341)\n\nLandsat Image Processing\n\n\nLidar Point Clouds for Forest Management\n\n\nIntroduction to Terrain and Hydrology\n\n\nUsing GIS for suitability analysis\n\n\n\nAdvanced GIS for Environmental Management (Course code: GEM 511)\n\nAdvanced Terrain Analysis and Riparian Area Management"
+    "text": "I have extensive experience as a Teaching Assistant across a range of undergraduate and graduate courses in geomatics and ecology. Explore the links below to see open-access teaching resources I have written at UBC as part of the Forestry curriculum.\n\nIntroduction to Geomatics for Natural Resource Management (Course code: NRES 241)\n\nExploring Spatial data using Climate NA\n\n\nIntroduction to Spatial Overay in QGIS\n\n\nHistorical Imagery using Airphotos\n\n\n\nIntermediate Geomatics for Natural Resource Management (Course code: NRES 341)\n\nLandsat Image Processing\n\n\nLidar Point Clouds for Forest Management\n\n\nIntroduction to Terrain and Hydrology\n\n\nUsing GIS for suitability analysis\n\n\n\nAdvanced GIS for Environmental Management (Course code: GEM 511)\n\nAdvanced Terrain Analysis and Riparian Area Management"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Hana Travers-Smith | Postdoctoral researcher",
     "section": "",
-    "text": "Hello! I am currently a postdoctoral researcher at the University of British Columbia working with Team Shrub and Isla Myers-Smith. My research uses remote sensing technology across different spatial scales to understand climate-driven changes in vegetation across the Canadian arctic and sub-arctic. I enjoy working with spatial data and exploring creative forms of data visualization.\nOutside of work I love to play soccer, ultimate frisbee and spend time with my cat Henry.\nHana"
+    "text": "Hello! I am currently a postdoctoral researcher at the University of British Columbia working with Team Shrub and Isla Myers-Smith. My research uses remote sensing technology across different spatial scales to understand climate-driven changes in vegetation across the Canadian arctic and sub-arctic. I enjoy working with spatial data and exploring creative forms of data visualization.\nOutside of work I love to play soccer, softball, curling, ultimate frisbee and spend time with my cat Henry.\nHana"
   },
   {
     "objectID": "about.html",
@@ -32,21 +32,21 @@
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "High-latitudes are experiencing some of the most rapid climatic hanges on the planet. This is driving shifts in what types of plants can grow and how productive they are. My PhD research focuses on using satellite remote sensing imagery to model vegetation height and cover across the Canadian forest-tundra ecotone. I use historical satellite images to map change in vegetation structure from 1985 to the present day and understand how the limit of northern boreal forests has responded to climate. This research has important implications for habitat monitoring for a range of boreal and tundra wildlife.\n\n\n\nMap of canopy height across northern Canada generated using satellite imagery."
+    "text": "My current research focuses on changes in habitat quality for the Porcupine caribou herd in northern Yukon. In particular I am interested in mapping the cover of lichen patches that caribou depend on for their winter diet. Lichens grow very slowly and are extremely sensitive to disturbances like wildfires, taking up to 70 years to recover after being burned. They can also be outcompeted by shrubs that grow much more quickly and take up available space. Overall, lichen cover is decreasing across the tundra and northern boreal, and remaining lichen patches are getting smaller and more dispersed due fires and shrub growth. Overall, my research will explore the effects of disturbance and shrubification on caribou movement and habitat use.\n[]"
   },
   {
     "objectID": "research.html#remote-sensing-of-the-northern-treeline",
     "href": "research.html#remote-sensing-of-the-northern-treeline",
     "title": "Research",
-    "section": "",
-    "text": "High-latitudes are experiencing some of the most rapid climatic hanges on the planet. This is driving shifts in what types of plants can grow and how productive they are. My PhD research focuses on using satellite remote sensing imagery to model vegetation height and cover across the Canadian forest-tundra ecotone. I use historical satellite images to map change in vegetation structure from 1985 to the present day and understand how the limit of northern boreal forests has responded to climate. This research has important implications for habitat monitoring for a range of boreal and tundra wildlife.\n\n\n\nMap of canopy height across northern Canada generated using satellite imagery."
+    "section": "Remote sensing of the northern treeline",
+    "text": "Remote sensing of the northern treeline\nHigh-latitudes are experiencing some of the most rapid climatic changes on the planet. This is shifts in what types of plants can grow and how productive they are. My PhD research focused on using satellite remote sensing imagery from Landsat and ICESat-2 to model vegetation height and cover across the Canadian forest-tundra ecotone. I also used historical satellite images to map change in vegetation structure from 1985 to the present day and understand how the limit of northern boreal forests has responded to climate change. This research has important implications for habitat monitoring for a range of boreal and tundra wildlife.\n\n\n\nMap of canopy height and the northern forest limit across Canada generated using Landsat satellite time-series."
   },
   {
     "objectID": "research.html#using-drones-to-map-carbon-storage-across-treelines",
     "href": "research.html#using-drones-to-map-carbon-storage-across-treelines",
     "title": "Research",
     "section": "Using drones to map carbon storage across treelines",
-    "text": "Using drones to map carbon storage across treelines\nWarming temperatures and changes in plant composition at the northern treeline can alter the amount of carbon stored in permafrost soils. My PhD research also uses high-resolution drone imagery to map tree and shrub density and associate vegetation structure with soil organic carbon storage. We also use drone imagery to validate and understand better understand spectral patterns observed in moderate resolution satellite data. This field research was conducted north of Inuvik, NWT on the traditional territory of the Inuvialuit peoples.\n\n\n\n\n\n\n\nHana with the Mavic-2 near Inuvik, NWT."
+    "text": "Using drones to map carbon storage across treelines\nWarming temperatures and changes in plant composition at the northern treeline can alter the amount of carbon stored in permafrost soils. My PhD research also used high-resolution drone imagery to map tree and shrub density and associate vegetation structure with soil organic carbon storage. We also use drone imagery to validate and understand better understand spectral patterns observed in moderate resolution satellite data. This field research was conducted north of Inuvik, NWT on the traditional territory of the Inuvialuit peoples.\n\n\n\n\n\n\n\nHana with the Mavic-2 near Inuvik, NWT."
   },
   {
     "objectID": "research.html#lakes-lakes-lakes",
@@ -54,5 +54,12 @@
     "title": "Research",
     "section": "Lakes, lakes, lakes",
     "text": "Lakes, lakes, lakes\nMy MSc research focused on using satellite images to track changes in the number and size of lakes across the western Canadian Arctic. We also collected water samples to understand how permafrost thaw impacts water quality in different site types across the Tuktoyaktuk Coastlands and the Mackenzie River Delta, NWT.\n\n\n\nFlying over lakes in the Mackenzie Plain, NWT."
+  },
+  {
+    "objectID": "research.html#habitat-change-for-barren-ground-caribou",
+    "href": "research.html#habitat-change-for-barren-ground-caribou",
+    "title": "Research",
+    "section": "",
+    "text": "My current research focuses on changes in habitat quality for the Porcupine caribou herd in northern Yukon. In particular I am interested in mapping the cover of lichen patches that caribou depend on for their winter diet. Lichens grow very slowly and are extremely sensitive to disturbances like wildfires, taking up to 70 years to recover after being burned. They can also be outcompeted by shrubs that grow much more quickly and take up available space. Overall, lichen cover is decreasing across the tundra and northern boreal, and remaining lichen patches are getting smaller and more dispersed due fires and shrub growth. Overall, my research will explore the effects of disturbance and shrubification on caribou movement and habitat use.\n[]"
   }
 ]
