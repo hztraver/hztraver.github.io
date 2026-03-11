@@ -12,7 +12,7 @@ title: "Curriculum Vitae"
 
 # Publications
 
-(8 total, citations = 102, h-index = 6)\
+(8 total, citations = 105, h-index = 5)\
 Google scholar: https://scholar.google.com/citations?user=cieOQPYAAAAJ
 
 1.  **Travers-Smith, H**., Coops, N.C., Mulverhill, C., Wulder, M.A., Lantz, T.C. & Ignace, D.D. (2025). Satellite observations reveal stable forest limits and shrub expansion across the Canadian forest-tundra ecotone. *Environmental Research Letters*. DOI 10.1088/1748-9326/adfc7f.
@@ -43,8 +43,7 @@ Google scholar: https://scholar.google.com/citations?user=cieOQPYAAAAJ
 
 # Awards
 
-**Total PhD funding: \$243,000 (2022-2024)\
-Total MSc funding: \$47,500 (2019-2020)**
+-   NSERC - Canada Postdoctoral Research Award (CPRA) – **2026**, \$140,000
 
 -   Canadian Society for Remote Sensing Award – Conference Travel, **2024,** \$3,000
 
@@ -67,3 +66,6 @@ Total MSc funding: \$47,500 (2019-2020)**
 -   Mr & Mrs. John L. Wyatt Price Scholarship in Geography, **2018**
 
 -   University of Victoria President's Scholarship, **2018**
+
+    **Total PhD funding: \$243,000 (2022-2024)\
+    Total MSc funding: \$47,500 (2019-2020)**

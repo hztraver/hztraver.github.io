@@ -6,7 +6,7 @@ title: "Research"
 
 My current research focuses on changes in habitat quality for the Porcupine caribou herd in northern Yukon. In particular I am interested in mapping the cover of lichen patches that caribou depend on for their winter diet. Lichens grow very slowly and are extremely sensitive to disturbances like wildfires, taking up to 70 years to recover after being burned. They can also be outcompeted by shrubs that grow much more quickly and take up available space. Overall, lichen cover is decreasing across the tundra and northern boreal, and remaining lichen patches are getting smaller and more dispersed due fires and shrub growth. Overall, my research will explore the effects of disturbance and shrubification on caribou movement and habitat use.
 
-\[![Woodland lichen patch in central Yukon. Photo credit: Sarah Naughtin](media/sarah_lichen.jpg)\]
+![Woodland lichen patch in central Yukon. Photo credit: Sarah Naughtin.](media/sarah_lichen.jpg){width="5000"}
 
 ## Remote sensing of the northern treeline
 
@@ -18,9 +18,9 @@ High-latitudes are experiencing some of the most rapid climatic changes on the p
 
 Warming temperatures and changes in plant composition at the northern treeline can alter the amount of carbon stored in permafrost soils. My PhD research also used high-resolution drone imagery to map tree and shrub density and associate vegetation structure with soil organic carbon storage. We also use drone imagery to validate and understand better understand spectral patterns observed in moderate resolution satellite data. This field research was conducted north of Inuvik, NWT on the traditional territory of the Inuvialuit peoples.
 
-[![Hana with the Mavic-2 near Inuvik, NWT.](media/image0000021%20(1).jpg){fig-align="center" width="400"}](https://doi.org/10.1139/as-2024-0048)
+[![Hana with the Mavic-2 near Inuvik, NWT.](media/image0000021%20(1).jpg){width="60%"}](https://doi.org/10.1139/as-2024-0048)
 
-## Lakes, lakes, lakes
+## Impact of permafrost thaw on tundra lakes
 
 My MSc research focused on using satellite images to track changes in the number and size of lakes across the western Canadian Arctic. We also collected water samples to understand how permafrost thaw impacts water quality in different site types across the Tuktoyaktuk Coastlands and the Mackenzie River Delta, NWT.
 
